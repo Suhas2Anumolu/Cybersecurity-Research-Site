@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research | AI in Cybersecurity</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="tier-indicators">
+        <div class="arrow"></div>
+        <div class="arrow"></div>
+        <div class="arrow"></div>
+        <!-- Add or remove arrows to match the number of research sections -->
+      </div>
+      
+  <header class="top-header">
+    <div class="container nav-container">
+      <div class="logo">AI Cybersecurity Research</div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="research.html" class="active">Research</a></li>
+          <li><a href="project.html">About Me</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-title">
+    <div class="container">
+      <h1>Research</h1>
+      <p><b>Research Question:</b> Which machine learning model offers the highest detection accuracy and lowest false positive rate when identifying cyber threats in the CICIDS2017 dataset? <br> <br>
+      <b> ​Hypothesis:</b> Deep learning models (CNN and LSTM) will outperform traditional models (RF and Autoencoders) in terms of precision and recall due to their ability to learn complex patterns in network traffic.</p>
+    </div>
+  </section>
+
+  <section class="research-section">
+    <div class="container">
+      <h2>Methodology</h2>
+      <p>Our approach involves a comparative study of Convolutional Neural Networks (CNN), Long Short-Term Memory (LSTM) networks, and Random Forest classifiers. Each model was trained on the CICIDS2017 dataset, a comprehensive benchmark dataset for intrusion detection. We preprocessed the data by removing null values, encoding categorical features, and standardizing numerical inputs before training. Each model was evaluated using accuracy, precision, recall, F1-score, and false positive rate.</p>
+      <img src="methodologu.jpg" alt="Methodology Illustration">
+    </div>
+  </section>
+
+  <section class="research-section alt">
+    <div class="container">
+      <h2>Dataset: CICIDS2017</h2>
+      <p>The CICIDS2017 dataset simulates real-world network traffic, including normal activity and a variety of attack scenarios. It is ideal for training and benchmarking intrusion detection systems. Our preprocessing steps included balancing the dataset and extracting relevant features such as packet size, duration, and source/destination IP behavior.</p>
+      <img src="CICID.png" alt="Dataset Diagram">
+    </div>
+  </section>
+
+  <section class="research-section">
+    <div class="container">
+      <h2>Results & Insights</h2>
+      <p>The CNN model achieved an accuracy of 93.2% but struggled with false positives. LSTM, while slower to train, performed well on time-sequential data with an F1-score of 91.5%. Random Forest emerged as the most balanced model with 92.8% accuracy and the lowest false positive rate of all three. These results highlight the strengths and trade-offs of each model in real-time intrusion detection.</p>
+      <img src="results.png" alt="Results Graph">
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 AI Cybersecurity Research | Designed by [Your Name]</p>
+    </div>
+  </footer>
+</body>
+
+</html>

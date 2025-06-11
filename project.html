@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project | Suhas Anumolu</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="top-header">
+      <div class="container nav-container">
+        <div class="logo">AI Cybersecurity Research</div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="project.html" class="active">Project</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <section class="page-title">
+      <h1>Paper, Product, Project & AI Models</h1>
+      <p>Comprehensive overview of my cybersecurity AI research work</p>
+    </section>
+
+    <section class="section">
+      <h2>Research Paper</h2>
+      <p>
+        This paper explores machine learning applications in cybersecurity,
+        specifically using the CICIDS2017 dataset to identify patterns in
+        malicious network traffic. It provides an in-depth comparison of CNN,
+        LSTM, Random Forest, and Autoencoder models, focusing on detection
+        accuracy, training time, and false positive rates. The paper also
+        includes an analysis of model interpretability and its implications for
+        real-world deployment in intrusion detection systems.
+      </p>
+      <a href="AI_Cybersecurity_Paper (1).pages" class="btn">View Full Paper (PDF)</a>
+    </section>
+
+    <section class="section alt">
+      <h2>Product</h2>
+      <p>
+        The final deliverable is a Python-based machine learning pipeline
+        designed to classify and flag potential cyber threats in real time. It
+        includes a streamlined preprocessing module for transforming raw network
+        traffic into structured feature sets, multiple ML model implementations,
+        and evaluation metrics visualization such as ROC curves and confusion
+        matrices. The system is optimized for rapid detection and supports
+        modular integration into existing cybersecurity frameworks.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Project Overview</h2>
+      <p>
+        This year-long project aimed to build an end-to-end system for cyber
+        threat detection by leveraging both supervised and unsupervised learning
+        models. The process involved extensive data preprocessing, statistical
+        analysis, model training and evaluation, and finally real-world
+        simulation testing. By combining deep learning and classical methods,
+        the project achieved significant improvements in accuracy and
+        reliability compared to standard intrusion detection benchmarks.
+      </p>
+    </section>
+
+    <section class="section alt">
+      <h2>AI Models</h2>
+      <div class="model-grid">
+        <div class="model-card">
+          <h3>Convolutional Neural Network (CNN)</h3>
+          <p>
+            Used to capture spatial patterns and detect abnormalities in network
+            feature distributions. CNN models were effective in detecting DDoS
+            and brute-force attacks by learning distinct packet-level patterns.
+            The architecture was optimized with dropout and batch normalization
+            to prevent overfitting. Performance tuning with hyperparameter
+            optimization techniques such as grid search further improved
+            generalization.
+          </p>
+        </div>
+        <div class="model-card">
+          <h3>Long Short-Term Memory (LSTM)</h3>
+          <p>
+            LSTM networks excelled at capturing temporal dependencies in network
+            flows, making them particularly useful for detecting slow-rate or
+            persistent attacks. Their sequential memory capabilities allowed
+            for higher accuracy in classifying time-dependent anomalies compared
+            to other deep learning models. Layer stacking and bidirectional LSTM
+            variants were also tested for performance enhancement.
+          </p>
+        </div>
+        <div class="model-card">
+          <h3>Random Forest (RF)</h3>
+          <p>
+            Used as a baseline for performance comparison, RF provided fast and
+            interpretable results. It excelled in feature importance ranking and
+            demonstrated strong performance for structured tabular data, making
+            it a robust classical method for preliminary detection tasks.
+            Ensemble methods and feature bagging improved robustness across
+            different attack classes.
+          </p>
+        </div>
+        <div class="model-card">
+          <h3>Autoencoder</h3>
+          <p>
+            An unsupervised approach that reconstructed input features to
+            determine anomalies based on reconstruction error. This method
+            performed well in identifying zero-day and rare attacks due to its
+            generalization ability across different traffic types and attack
+            classes. A combination of sparse and denoising autoencoders was
+            explored to reduce overfitting and enhance anomaly detection
+            accuracy.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Code Sample + Output</h2>
+      <div class="code-output">
+        <div class="code-box">
+          <pre><code class="language-python">
+# Enhanced: LSTM Model Training for Cyber Threat Detection
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import LSTM, Dropout, Dense, BatchNormalization
+from tensorflow.keras.callbacks import EarlyStopping
+
+model = Sequential()
+model.add(LSTM(128, input_shape=(X_train.shape[1], X_train.shape[2]), return_sequences=True))
+model.add(BatchNormalization())
+model.add(Dropout(0.3))
+model.add(LSTM(64, return_sequences=True))
+model.add(BatchNormalization())
+model.add(Dropout(0.3))
+model.add(LSTM(32, return_sequences=False))
+model.add(Dense(1, activation='sigmoid'))
+
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+early_stop = EarlyStopping(monitor='val_loss', patience=5, restore_best_weights=True)
+history = model.fit(
+    X_train, y_train,
+    epochs=50,
+    batch_size=64,
+    validation_split=0.2,
+    callbacks=[early_stop]
+)
+          </code></pre>
+        </div>
+        <div class="output-box">
+          <h4>Sample Output:</h4>
+          <p>
+            Validation Accuracy: <strong>96.8%</strong><br />
+            F1 Score: <strong>0.957</strong><br />
+            False Positive Rate: <strong>1.8%</strong><br />
+            Detection Latency: <strong>0.28 seconds</strong><br />
+            Model Confidence (avg): <strong>94.1%</strong>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Suhas Anumolu. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
